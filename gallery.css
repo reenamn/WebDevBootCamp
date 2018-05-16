@@ -1,0 +1,9 @@
+.pink{
+			background-color: pink;
+			color: purple;
+			border: purple 1px solid;
+		}
+		
+body{
+	padding-top: 70px;
+}
