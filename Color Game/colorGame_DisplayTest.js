@@ -9,14 +9,13 @@ var easyGameBtn = document.getElementById("easy");
 var colors = [];
 var pickedColor;
 var numBoxColors = squares.length;
-// var modeButtons = document.querySelectorAll(".mode");
 
 
 //init Event listeners
 function init(){
 
 	//assign click listeners to squares
-	for(var i=0; i< numBoxColors; i++)
+	for(i=0; i< numBoxColors; i++)
 	{	
 		squares[i].addEventListener("click", sqClick);
 	}
@@ -26,7 +25,6 @@ function init(){
 	hardGameBtn.addEventListener("click", hardGame);
 	easyGameBtn.addEventListener("click", easyGame);
 
-	assignColors();
 }
 
 // Assign Colors
@@ -79,8 +77,9 @@ function sqClick(){
 		for(var i=0; i<numBoxColors; i++)
 		{
 			squares[i].style.backgroundColor = this.style.backgroundColor;
-			squares[i].style.visibility = "visible";
-			squares[i].style.opacity = 1;
+			squares[i].style.display = "block";
+			// squares[i].style.visibility = "visible";
+			// squares[i].style.opacity = 1;
 		}
 	}
 	else
@@ -90,8 +89,9 @@ function sqClick(){
 		message.textContent = "Try Again";
 
 		//fade out
-		this.style.visibility = "hidden";
-		this.style.opacity = 0;
+		this.style.display = "none";
+		// this.style.visibility = "hidden";
+		// this.style.opacity = 0;
 	}
 }
 
@@ -101,7 +101,7 @@ function gameReset() {
 	assignColors();
 	
 	//reset BG color
-	// document.body.style.backgroundColor = "#232323";
+	document.body.style.backgroundColor = "#232323";
 
 	//reset H1 bg color
 	h1Element.style.backgroundColor = null;
@@ -115,21 +115,20 @@ function gameReset() {
 	//make the squares visibile again
 	for(var i=0; i<numBoxColors; i++)
 	{
-		squares[i].style.visibility = "visible";
-		squares[i].style.opacity = 1;
+		squares[i].style.display = "block";
+		// squares[i].style.visibility = "visible";
+		// squares[i].style.opacity = 1;
 	}
 }
-
-
-
 
 function easyGame(){
 	numBoxColors = 3;
 
 	for(var i=numBoxColors; i<squares.length; i++)
 	{
-		squares[i].style.visibility = "hidden";
-		squares[i].style.opacity = 0;
+		squares[i].style.display = "none";
+		// squares[i].style.visibility = "hidden";
+		// squares[i].style.opacity = 0;
 	}
 
 	toggleEasyHardBtn();
@@ -155,3 +154,4 @@ function toggleEasyHardBtn(){
 
 //init colors
 init();
+assignColors();

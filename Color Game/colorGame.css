@@ -30,9 +30,10 @@ body{
 	float: left;
 	margin: 1.66%;
 	opacity: 1;
-	transition: background-color .6s ease-in;
-	--webkit-transition: background-color .6s ease-in;
-	-moz-transition: background-color .6s ease-in;
+	transition: all .3s ease-in;
+	--webkit-transition: all .3s ease-in;
+	-moz-transition: all .3s ease-in;
+	/*-moz-transition: background-color .6s ease-in;*/
 	
 	border-radius: 15%;
 
@@ -69,6 +70,7 @@ h1{
 
 button{
 	border: none;
+	outline: 0;
 	background-color: none;
 	font-family: inherit;
 	font-size: inherit;
